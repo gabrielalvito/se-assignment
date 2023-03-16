@@ -1,0 +1,42 @@
+PROGRAM TodoList
+
+READ AND WRITE "nama_tugas" with array
+READ AND WRITE "judul_tugas" with string
+READ AND WRITE "deskripsi_tugas" with string
+READ AND WRITE "keluar" with boolean
+
+WHILE TRUE
+    DO "menu"
+    PRINT "1. Tambah Tugas"
+    PRINT "2. Tampilkan Tugas"
+    PRINT "3. Keluar"
+
+    INPUT pilihan
+
+    IF pilihan equal 1
+        FUNCTION tambah_tugas(judul_tugas, deskripsi_tugas)
+            INPUT judul_tugas
+            INPUT deskripsi_tugas
+            STORE "tugas" with (judul_tugas, deskripsi_tugas)
+            nama_tugas.append(tugas)
+        END FUNCTION
+    
+    ELSE IF pilihan equal 2
+        FUNCTION tampil_tugas (nama_tugas)
+            IF "nama_tugas" equal == 0:
+                PRINT "Belum ada tugas"
+            ELSE
+                FOR tugas in nama_tugas:
+                    PRINT "nama_tugas"
+                END FOR
+        END FUNCTION   
+
+    ELSE IF pilihan equal 3
+        IF "keluar" equal TRUE
+            BREAK
+        ELSE
+            SHOW "menu"
+
+END WHILE
+
+END PROGRAM
